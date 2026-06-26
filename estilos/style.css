@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+:root {
+            --rosa:      #C97B7B;
+            --rosa-claro: #E8B4B4;
+            --creme:     #FDF6F0;
+            --chocolate: #2C1A1A;
+            --dourado:   #D4A853;
+            --off-white: #FAF7F4;
+            --cinza:     #7A6A6A;
+        }
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.logo {
+    font-family: 'Dancing script';
+}
