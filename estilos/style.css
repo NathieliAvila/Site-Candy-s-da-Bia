@@ -10,10 +10,113 @@
             --cinza:     #7A6A6A;
         }
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    position: relative;
+    
+    
+}
+
+#menu {
+    z-index: 10;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+
+#itens {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 70%;
+    min-height: 100vh;
+    background-color: var(--creme);
+    padding: 100px 40px 40px 40px;
+}
+
+
+#itens a {
+    display: block;
+    text-decoration: none;
+    color: var(--chocolate);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(201, 123, 123, 0.2);
+    
+}
+
+#itens a:last-child {
+    border-bottom: none;
+}
 body {
     font-family: 'Lato', sans-serif;
+    background-color: var(--off-white);
+
 }
 
 .logo {
     font-family: 'Dancing script';
+    color: var(--rosa);
+}
+
+.container {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+}
+
+.hero-Titulo {
+    font-family: 'Playfair Display';
+    font-size: 2.4rem;
+}
+
+.hero-Titulo em {
+    color: var(--rosa);
+}
+
+
+div.foto-Bianca {
+    width: 100%;
+    height: 270px;
+    background: url(../Imagens/Bianca.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+
+.hero-Grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.hero-Fotos img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+
+}
+
+.hero-Fotos:first-child {
+    grid-column: 1/3;
 }
