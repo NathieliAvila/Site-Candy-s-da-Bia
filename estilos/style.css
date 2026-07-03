@@ -8,6 +8,7 @@
             --dourado:   #D4A853;
             --off-white: #FAF7F4;
             --cinza:     #7A6A6A;
+            --marrom: #1A0F0F;
         }
 
 
@@ -70,6 +71,7 @@ header {
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--off-white);
+    color: var(--cinza);
 
 }
 
@@ -84,12 +86,13 @@ body {
     margin: auto;
 }
 
-.hero-Titulo {
+.titulo {
     font-family: 'Playfair Display';
     font-size: 2.4rem;
+    color: var(--chocolate);
 }
 
-.hero-Titulo em {
+.titulo em {
     color: var(--rosa);
 }
 
@@ -119,4 +122,14 @@ div.foto-Bianca {
 
 .hero-Fotos:first-child {
     grid-column: 1/3;
+}
+
+footer {
+    padding: 40px;
+    background-color: var(--marrom);
+}
+
+footer > p.logo {
+    text-align: center;
+    font-size: 1.4rem;
 }
