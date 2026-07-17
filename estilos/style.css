@@ -10,8 +10,7 @@
             --cinza:     #7A6A6A;
             --marrom: #1A0F0F;
         }
-
-
+        
 * {
     margin: 0;
     padding: 0;
@@ -19,45 +18,39 @@
 }
 
 
+body {
+    display: grid;
+    grid-template: 70px auto auto auto auto auto 200px / 1fr;
+    
+}
 
 header {
-    background-color: var(--off-white);
+    background-color: var(--chocolate);
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 15px;
-    position: relative;
-    
-    
 }
 
 #menu {
-    z-index: 10;
-    font-size: 35px;
-    cursor: pointer;
+    color: var(--rosa-claro);
 }
 
-
-
+#menu:hover {
+    cursor: pointer;
+    
+}
 #itens {
     display: none;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 70%;
-    min-height: 100vh;
-    background-color: var(--creme);
-    padding: 100px 40px 40px 40px;
+    
+    
 }
 
-
 #itens a {
-    display: block;
+    display: flex;
     text-decoration: none;
-    color: var(--chocolate);
+    color: var(--rosa-claro);
     font-size: 1.1rem;
     font-weight: 700;
     padding: 18px 0;
@@ -65,30 +58,34 @@ header {
     
 }
 
-#itens a:last-child {
-    border-bottom: none;
-}
-body {
-    font-family: 'Lato', sans-serif;
-    background-color: var(--off-white);
-    color: var(--cinza);
-
-}
-
 .logo {
     font-family: 'Dancing script';
-    color: var(--rosa);
+    color: var(--rosa-claro);
+    font-size: 25px;
 }
 
+
+
 .container {
-    background-color: white;
-    width: 90%;
-    margin: auto;
+    background-color: white;   
+    
 }
+
+#hero {
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
 
 .titulo {
     font-family: 'Playfair Display';
-    font-size: 2.4rem;
     color: var(--chocolate);
 }
 
@@ -96,40 +93,37 @@ body {
     color: var(--rosa);
 }
 
-
-div.foto-Bianca {
-    width: 100%;
-    height: 270px;
-    background: url(../Imagens/Bianca.png) no-repeat;
-    background-size: contain;
-    background-position: center center;
+.texto-Hero {
+    padding: 0 16px;
 }
 
-
-.hero-Grid {
+section.flex-inicio {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template: repeat(2, 1fr)/ repeat(2,1fr);
+    margin: 10px;
+    gap: 5px;
 }
 
-.hero-Fotos img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
+div.flex-Fotos {
 
 }
 
-.hero-Fotos:first-child {
-    grid-column: 1/3;
+.foto1 {
+    grid-area: 1/1/2/3;
 }
+
+
+#contatos {
+    background-color: var(--chocolate);
+    color: white;
+}
+
+#contatos h2 {
+    color: white;
+}
+
 
 footer {
-    padding: 40px;
     background-color: var(--marrom);
-}
-
-footer > p.logo {
-    text-align: center;
-    font-size: 1.4rem;
+    color: white;
 }

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@media (min-width: 481px){
+    header {
+    background-color: var(--chocolate);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
+#menu {
+    display: none;
+}
+}
