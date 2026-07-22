@@ -14,4 +14,45 @@
 #menu {
     display: none;
 }
+
+#hero {
+    flex-flow: row nowrap;
 }
+
+.foto-Bianca {
+    order: 2;
+}
+
+#itens {
+    justify-content: space-around;
+    gap: 30px;
+    
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .texto-hero {
+        padding: 5rem 5vw 5rem 8vw;
+    }
+
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .foto-Bianca {
+        order: 1;
+        flex: 1;
+}
+
+    .texto-Hero {
+        flex: 1;
+        padding: 5rem 5vw 5rem 8vw;
+    }
+
+}
+

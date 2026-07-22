@@ -21,6 +21,7 @@
 body {
     display: grid;
     grid-template: 70px auto auto auto auto auto 200px / 1fr;
+    font-family: 'Lato', sans-serif;
     
 }
 
@@ -42,7 +43,7 @@ header {
     
 }
 #itens {
-    display: none;
+    display: flex;
     
     
 }
@@ -67,13 +68,14 @@ header {
 
 
 .container {
-    background-color: white;   
+    background-color: var(--off-white);   
     
 }
 
 #hero {
     display: flex;
     flex-flow: column wrap;
+    
     
 }
 
@@ -82,10 +84,9 @@ img {
     height: auto;
 }
 
-
-
 .titulo {
     font-family: 'Playfair Display';
+    font-size: clamp(2.4rem, 9vw, 3.6rem);
     color: var(--chocolate);
 }
 
@@ -93,18 +94,47 @@ img {
     color: var(--rosa);
 }
 
+.hero-eyebrow {
+    letter-spacing: 0.2rem;
+    font-size: 0.68rem;
+    color: var(--rosa);
+    font-weight: 700;
+}
+
 .texto-Hero {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
     padding: 0 16px;
 }
 
-section.flex-inicio {
+.texto-Hero > p {
+    margin-bottom: 2rem;
+}
+
+#sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+
+}
+
+div.flex-inicio {
     display: grid;
     grid-template: repeat(2, 1fr)/ repeat(2,1fr);
     margin: 10px;
     gap: 5px;
 }
 
+.Bianca {
+    order: 1;
+}
+
 div.flex-Fotos {
+    display: block;
+    
+  
 
 }
 
@@ -127,3 +157,10 @@ footer {
     background-color: var(--marrom);
     color: white;
 }
+
+p {
+    line-height: 1.8;
+    font-weight: 300;
+    color: var(--cinza);
+}
+
