@@ -8,8 +8,7 @@
 
     
     <title>Candy's da Bia</title>
-    <link rel="stylesheet" href="/estilos/style.css">
-    <link rel="stylesheet" href="/estilos/desktop.css">
+    <link rel="stylesheet" href="MobileFirst.css">
 </head>
 <body>
 
@@ -46,15 +45,16 @@
         <div class="Bianca">
             <p>Quem é Bianca?</p>
             <h2 class="titulo">Da paixão pela confeitaria a uma história de sucesso</h2>
+            <img src="Imagens/BiancaJornal.jpeg" alt="" class="BiancaJornal">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ad officia voluptatem non illo culpa necessitatibus, explicabo sit nulla commodi velit id ipsum illum vitae ipsa excepturi facere at eaque?</p>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis quos, est beatae corporis aut obcaecati optio, nam earum, praesentium veritatis deleniti quisquam maxime libero! Unde aliquid cumque in deserunt temporibus?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor qui fugiat, explicabo temporibus reiciendis dolorum voluptatem amet, vero omnis laudantium saepe. Ipsum quis distinctio culpa vitae autem ducimus corrupti.</p>
             
         </div>
 
-        <div id="fotosInicio" class="flex-inicio">
+        <!-- <div id="fotosInicio" class="galeria">
             <div class="flex-Fotos foto1">
-                <img src="Imagens/cake-burguer.jpeg" alt="">
+                <img src="Imagens/BiancaJornal.jpeg" alt="">
             </div>
             <div class="flex-Fotos">
                 <img src="Imagens/cake-burguer.jpeg" alt="">
@@ -62,7 +62,7 @@
             <div class="flex-Fotos">
                 <img src="Imagens/cake-burguer.jpeg" alt="">
             </div>
-        </div>
+        </div> -->
         
 
     </section>
@@ -99,13 +99,11 @@
 
     function Menu() {
         const itens = document.getElementById('itens');
-        const menu = document.getElementById('menu');
-        const logo = document.getElementById('logo');
+        
 
         if (itens.style.display == 'flex') {
             itens.style.display = 'none';
-            menu.innerHTML = 'menu'
-            logo.style.display = 'block'
+        
 
         } else {
             itens.style.display = 'flex';
