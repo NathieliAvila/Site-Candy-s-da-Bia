@@ -13,7 +13,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
 }
 
 body {
@@ -27,6 +26,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
+    position: relative;
 }
 
 .logo {
@@ -42,9 +42,23 @@ header {
 
 #itens {
     display: none;
-    
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--chocolate);
+    padding: 10px 20px 20px;
+    z-index: 10;
 }
 
+#itens a {
+    text-decoration: none;
+    color: var(--rosa-claro);
+    font-weight: bold;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgba(232, 180 , 180, 0.2);
+}
 #hero {
     display: flex;
     flex-direction: column;
@@ -52,16 +66,20 @@ header {
 
 .foto-Bianca {
     width: 100%;
+    height: 55vh;
 }
 
 .foto-Bianca img, .BiancaJornal{
-    display: block;
+    
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .texto-Hero{
-    padding: 40px 20px;
+    padding: 50px 20px 60px;
+    max-width: 650px;
 }
 
 .hero-eyebrow{
@@ -76,6 +94,7 @@ header {
 .titulo {
     font-family: 'Playfair Display';
     font-size: clamp(2.4rem, 9vw, 3.6rem);
+    line-height: 1.05;
     color: var(--chocolate);
 }
 
@@ -84,16 +103,29 @@ header {
 }
 
 .texto-Hero p {
-    margin-top: 20px;
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+.BiancaJornal {
+    margin: 30px 0;
+    border-radius: 4px;
 }
 
 #sobre {
-    padding: 50px 20px;
+    padding: 70px 20px;
+}
+
+#sobre p {
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 #sobre > .Bianca {
-    margin-bottom: 40px;
+    max-width: 700px;
+    margin: 0 auto;
 }
+
 
 .galeria{
     display: grid;
@@ -113,14 +145,75 @@ header {
     background-color: var(--creme);
 }
 
+.titulo-secao {
+    max-width: 650px;
+    margin: 0 auto 40px
+}
+
+.titulo-secao > p:first-child {
+    color: var(--rosa);
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+.titulo {
+    margin: 10px 0;
+}
+
+.titulo-secao > p:last-child {
+    line-height: 1.7;
+}
+
+.produtos-container {
+    display: grid;
+    gap: 25px;
+}
+
+.card-produto {
+    background-color: var(--off-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(44, 26, 26, 0.08);
+}
+.card-produto img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.info-produto {
+    padding: 22px;
+}
+
+.info-produto h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--chocolate);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.info-produto p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.info-produto span {
+    color: var(--rosa);
+    font-weight: bold;
+}
+
 #contatos {
     background-color: var(--chocolate);
     color: white;
-    padding: 50px 20px;
+    padding: 70px 20px;
 }
+
 
 #contatos h2{
     color: white;
+    line-height: 1.1;
     
 }
 
@@ -128,12 +221,65 @@ header {
     color: var(--rosa-claro);
 }
 
+#contatos > p:nth-of-type(2) {
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.botao-contato {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--rosa-claro);
+    color: var(--rosa-claro);
+    transition: 0.3s;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+
+.botao-contato:hover {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+    color: white;
+}
+
+.mapa {
+    margin-top: 50px;
+}
+
+.mapa h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 footer{
     background-color: var(--marrom);
     color: white;
-    padding: 30px 20px;
+    padding: 35px 20px;
+    text-align: center;
 }
 
-footer p {
-    color: white;
+footer .logo {
+    margin-bottom: 10px;
+}
+
+footer p:last-child{
+    font-size: 0.8rem;
+    color: var(--rosa-claro);
 }
