@@ -126,7 +126,18 @@ header {
     margin: 0 auto;
 }
 
+#sobre h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--rosa);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
 
+#sobre h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--rosa);
+
+}
 .galeria{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -251,6 +262,7 @@ header {
     border-color: var(--rosa);
     color: white;
 }
+
 
 .mapa {
     margin-top: 50px;
