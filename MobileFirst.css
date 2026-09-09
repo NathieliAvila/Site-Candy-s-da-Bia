@@ -16,8 +16,10 @@
 }
 
 body {
-    background-color: var(--off-white);
+    background-color: rgba(255, 192, 203, 0.329);
     font-family: 'Lato', sans-serif;
+    color: var(--chocolate);
+    line-height: 1.6;
 }
 
 header {
@@ -25,12 +27,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 18px 20px;
     position: relative;
 }
 
 .logo {
-    font-family: 'Dancing script';
+    font-family: 'Dancing Script', cursive;
     color: var(--rosa-claro);
     font-size: 25px;
 }
@@ -38,6 +40,7 @@ header {
 #menu {
     color: var(--rosa-claro);
     cursor: pointer;
+    font-size: 28px;
 }
 
 #itens {
@@ -66,7 +69,7 @@ header {
 
 .foto-Bianca {
     width: 100%;
-    height: 55vh;
+    height: 48vh;
 }
 
 .foto-Bianca img, .BiancaJornal{
@@ -78,7 +81,7 @@ header {
 }
 
 .texto-Hero{
-    padding: 50px 20px 60px;
+    padding: 55px 20px 65px;
     max-width: 650px;
 }
 
@@ -93,8 +96,8 @@ header {
 
 .titulo {
     font-family: 'Playfair Display';
-    font-size: clamp(2.4rem, 9vw, 3.6rem);
-    line-height: 1.05;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    line-height: 1.02;
     color: var(--chocolate);
 }
 
@@ -104,12 +107,33 @@ header {
 
 .texto-Hero p {
     margin-top: 25px;
+    max-width: 500px;
     line-height: 1.8;
+    font-size: 1rem;
+}
+
+.botao-hero {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 22px;
+    background-color: var(--chocolate);
+    color: var(--off-white);
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao-hero:hover {
+    background-color: var(--rosa);
 }
 
 .BiancaJornal {
-    margin: 30px 0;
-    border-radius: 4px;
+    display: block;
+    width: 100%;
+    margin: 45px 0;
+    border-radius: 3px;
 }
 
 #sobre {
@@ -137,6 +161,22 @@ header {
     font-family: 'Playfair Display', serif;
     color: var(--rosa);
 
+}
+
+.frases-historia {
+    margin: 50px 0;
+    padding: 35px 25px;
+    border-left: 3px solid var(--rosa);
+}
+
+.frases-historia p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+.frases-historia p:last-child{
+    margin-bottom: 0;
 }
 .galeria{
     display: grid;
@@ -183,14 +223,23 @@ header {
 
 .card-produto {
     background-color: var(--off-white);
-    border-radius: 8px;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(44, 26, 26, 0.08);
+    box-shadow: 0 8px 25px rgba(44, 26, 26, 0.08);
+    
 }
+
+.card-produto:hover {
+    transform: translate(-5px);
+    box-shadow: 0 12px 30px rgba(44, 26, 26, 0.12);
+    transition: 0.6s;
+
+}
+
 .card-produto img {
     display: block;
     width: 100%;
-    height: 230px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -217,13 +266,22 @@ header {
 
 #contatos {
     background-color: var(--chocolate);
-    color: white;
-    padding: 70px 20px;
+    color: var(--off-white);
+    padding: 88px 20px;
+}
+
+#contatos > p:first-child {
+    color: var(--rosa-claro);
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 
 #contatos h2{
-    color: white;
+    color: var(--off-white);
     line-height: 1.1;
     
 }
@@ -234,6 +292,7 @@ header {
 
 #contatos > p:nth-of-type(2) {
     margin-top: 20px;
+    max-width: 500px;
     line-height: 1.7;
 }
 
@@ -263,6 +322,13 @@ header {
     color: white;
 }
 
+.frase-final {
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--rosa-claro);
+}
 
 .mapa {
     margin-top: 50px;
