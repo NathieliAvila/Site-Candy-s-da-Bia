@@ -7,6 +7,7 @@
             --off-white: #FAF7F4;
             --cinza:     #7A6A6A;
             --marrom: #1A0F0F;
+            
         }
         
 * {
@@ -15,11 +16,25 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .detalhe {
     width: 45px;
     height: 2px;
     background-color: var(--dourado);
     margin: 20px 0 30px;
+    position: relative;
+}
+
+.detalhe::after{
+    content: "✦";
+    position: absolute;
+    left: 55px;
+    top: -9px;
+    color: var(--dourado);
+    font-size: 12px;
 }
 body {
     background-color: var(--off-white);
@@ -29,44 +44,75 @@ body {
 }
 
 header {
-    background-color: var(--chocolate);
+    background-color: rgba(44, 26, 26, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(232, 180, 180, 0.12);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 20px;
-    position: relative;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
 }
 
 .logo {
     font-family: 'Dancing Script', cursive;
     color: var(--rosa-claro);
-    font-size: 25px;
+    font-size: 28px;
+    line-height: 1;
 }
 
 #menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
     color: var(--rosa-claro);
     cursor: pointer;
-    font-size: 28px;
 }
 
 #itens {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--chocolate);
-    padding: 10px 20px 20px;
-    z-index: 10;
+    padding: 10px 20px 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
+#itens.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 #itens a {
     text-decoration: none;
     color: var(--rosa-claro);
     font-weight: bold;
-    padding: 15px 0px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08rem;
+    padding: 16px 5px;
     border-bottom: 1px solid rgba(232, 180 , 180, 0.2);
+}
+
+#itens a:last-child{
+    border-bottom: none;
+}
+
+#itens a:active {
+    color: white;
 }
 #hero {
     display: flex;
@@ -81,10 +127,27 @@ header {
 }
 .foto-Bianca {
     width: 100%;
-    height: 48vh;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
 }
 
-.foto-Bianca img, .BiancaJornal{
+.foto-Bianca::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to bottom, transparent 55%, rgba(44, 26, 26, 0.35));
+}
+
+.foto-Bianca img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.BiancaJornal{
     
     width: 100%;
     height: 100%;
@@ -93,23 +156,24 @@ header {
 }
 
 .texto-Hero{
-    padding: 55px 20px 65px;
+    padding: 50px 24px 70px;
     max-width: 650px;
 }
 
 .hero-eyebrow{
     display: block;
-    letter-spacing: 0.2rem;
-    font-size: 0.68rem;
+    letter-spacing: 0.18rem;
+    font-size: 0.65rem;
     color: var(--rosa);
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .titulo {
     font-family: 'Playfair Display';
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    line-height: 1.02;
+    font-size: clamp(2.6rem, 12vw, 4rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
     color: var(--chocolate);
 }
 
@@ -125,33 +189,38 @@ header {
 }
 
 .botao-hero {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
     margin-top: 30px;
-    padding: 13px 22px;
+    padding: 14px 24px;
     background-color: var(--chocolate);
     color: var(--off-white);
     text-decoration: none;
-    border-radius: 3px;
-    font-size: 0.85rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
     font-weight: bold;
-    transition: 0.3s;
+    letter-spacing: 0.04rem;
+    transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
 .botao-hero:hover {
     background-color: var(--rosa);
+    transform: translateY(-2px);
 }
 
 .BiancaJornal {
-    position: relative;
-    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
     width: 100%;
-    margin: 35px 0;
+    margin: 40px 0;
     border-radius: 3px;
     box-shadow: 10px 10px 0 rgba(201, 123, 123, 0.15);
 }
 
 #sobre {
-    padding: 55px 20px 60px;
+    padding: 70px 24px;
     background-color: var(--creme);
 }
 
@@ -179,31 +248,36 @@ header {
 }
 
 .frases-historia {
-    margin: 60px 0;
+    margin: 50px 0;
     padding: 35px 25px;
     border-left: 2px solid var(--rosa);
-    background-color: rgba(201, 123, 123, 0.09);
+    background: linear-gradient(135deg, rgba(201, 123, 123, 0.10), rgba(212, 168, 83, 0.06));
+
+    border-left: 2px solid var(--rosa);
+    border-radius: 0 4px 4px 0;
 }
 
 .frases-historia p {
     font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
+    font-size: 1.18rem;
     line-height: 1.5;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
+    color: var(--chocolate);
 }
 .frases-historia p:last-child{
     margin-bottom: 0;
 }
 
 .fechamento-historia {
-    margin-top: 70px;
+    margin-top: 0px;
     padding: 45px 10px;
     text-align: center;
 }
 
 .fechamento-historia p {
+    font-family: 'Playfair Display', serif;
     font-size: 1rem;
-    color: var(--cinza);
+    color: var(--chocolate);
 }
 
 .fechamento-historia strong {
@@ -237,7 +311,7 @@ header {
 }
 
 #produtos{
-    padding: 55px 20px;
+    padding: 40px 20px;
     background-color: var(--creme);
 }
 
@@ -271,14 +345,15 @@ header {
 
 .produtos-container {
     display: grid;
-    gap: 25px;
+    grid-template-columns: 1fr;
+    gap: 28px;
 }
 
 .card-produto {
     background-color: var(--off-white);
-    border-radius: 4px;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(44, 26, 26, 0.08);
+    box-shadow: 0 10px 30px rgba(44, 26, 26, 0.07);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
 }
@@ -291,12 +366,26 @@ header {
 .card-produto img {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 270px;
     object-fit: cover;
 }
 
 .info-produto {
-    padding: 22px;
+    position: relative;
+    padding: 24px 22px 28px;
+}
+
+.info-produto::before{
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 22px;
+    margin-top: 5px;
+
+    width: 50px;
+    height: 2px;
+    background-color: var(--dourado);
 }
 
 .info-produto h3 {
@@ -317,17 +406,29 @@ header {
 }
 
 .convite {
-    padding: 55px 20px;
+    padding: 90px 24px;
     text-align: center;
     background-color: var(--off-white);
+    position: relative;
 }
 
+.convite::before{
+    content: "✦";
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--dourado);
+    font-size: 20px;
+
+}
 .convite h2 {
     max-width: 600px;
-    margin: 15px auto 25px;
+    margin: 15px auto 30px;
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1rem, 8vw, 3.2rem);
-    line-height: 1.1;
+    font-size: clamp(2rem, 9vw, 3.2rem);
+    line-height: 1.08;
     font-weight: 400;
 }
 
@@ -337,7 +438,7 @@ header {
 #contatos {
     background-color: var(--chocolate);
     color: var(--off-white);
-    padding: 60px 20px;
+    padding: 75px 24px;
 }
 
 #contatos > p:first-child {
@@ -374,15 +475,21 @@ header {
 }
 
 .botao-contato {
-    display: block;
-    padding: 15px;
-    text-align: center;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    
     text-decoration: none;
     border: 1px solid var(--rosa-claro);
     color: var(--rosa-claro);
     transition: 0.3s;
     border-radius: 4px;
     font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 0.04rem;
+    transition: 0.25s ease;
 }
 
 
@@ -413,21 +520,22 @@ header {
 }
 
 .mapa {
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .mapa h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    font-weight: 400;
 }
 
 .mapa iframe {
     display: block;
     width: 100%;
-    height: 320px;
+    height: 280px;
     border: 0;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 footer{
     background-color: var(--marrom);
