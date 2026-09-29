@@ -2,11 +2,18 @@
             --rosa:      #C97B7B;
             --rosa-claro: #E8B4B4;
             --creme:     #FDF6F0;
-            --chocolate: #2C1A1A;
+            --chocolate: #2C1A1A; 
             --dourado:   #D4A853;
             --off-white: #FAF7F4;
             --cinza:     #7A6A6A;
             --marrom: #1A0F0F;
+
+            --espaco-xs: 8px;
+            --espaco-sm: 16px;
+            --espaco-md: 24px;
+            --espaco-lg: 48px;
+            --espaco-xl: 80px;
+            --espaco-xxl: 120px;
             
         }
         
@@ -44,13 +51,16 @@ body {
 }
 
 header {
-    background-color: rgba(44, 26, 26, 0.96);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(232, 180, 180, 0.12);
+    height: 72px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+
+    background-color: var(--chocolate);
+    border-bottom: 1px solid rgba(232, 180, 180, 0.12);
+    backdrop-filter: blur(10px);
+    
     position: sticky;
     top: 0;
     z-index: 100;
@@ -84,6 +94,7 @@ header {
     left: 0;
     width: 100%;
     background-color: var(--chocolate);
+    
     padding: 10px 20px 25px;
     opacity: 0;
     visibility: hidden;
@@ -117,6 +128,7 @@ header {
 #hero {
     display: flex;
     flex-direction: column;
+    
 }
 
 .introducao {
@@ -147,13 +159,6 @@ header {
     object-position: center;
 }
 
-.BiancaJornal{
-    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
 
 .texto-Hero{
     padding: 50px 24px 70px;
@@ -170,7 +175,7 @@ header {
 }
 
 .titulo {
-    font-family: 'Playfair Display';
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2.3rem, 10vw, 4rem);
     line-height: 0.98;
     letter-spacing: -0.04em;
@@ -211,16 +216,20 @@ header {
 }
 
 .BiancaJornal {
+    width: 100%;
+    height: 100%;
+    
+    object-position: center;
     aspect-ratio: 4/5;
     object-fit: cover;
-    width: 100%;
+    
     margin: 40px 0;
     border-radius: 3px;
     box-shadow: 10px 10px 0 rgba(201, 123, 123, 0.15);
 }
 
 #sobre {
-    padding: 70px 24px;
+    padding: 40px 24px;
     background-color: var(--creme);
 }
 
@@ -250,20 +259,40 @@ header {
 .historia-item {
     position: relative;
     margin: 70px 0;
+    padding-left: 28px;
+}
+
+.historia-item::before{
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: -70px;
+    width: 1px;
+    background-color: rgba(201, 123, 123, 0.35);
+}
+
+.historia-item:last-of-type::before{
+    display: none;
 }
 
 .historia-marcador {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
     margin-bottom: 18px;
 }
 
 .historia-marcador::before {
     content: "";
-    width: 32px;
-    height: 2px;
+    position: absolute;
+    left: -28px;
+    width: 7px;
+    height: 7px;
+    border-radius: 60%;
     background-color: var(--dourado);
+    border: 3px solid var(--rosa);
+    box-shadow: 0 0 0 1px var(--rosa);
 }
 
 .historia-marcador span {
@@ -282,13 +311,14 @@ header {
     margin-bottom: 18px;
 }
 
+.historia-conteudo .BiancaJornal {
+    margin: 30px 0 10px;
+}
 .frases-historia {
-    margin: 50px 0;
+    margin: 0px 0;
     padding: 35px 25px;
     border-left: 2px solid var(--rosa);
     background: linear-gradient(135deg, rgba(201, 123, 123, 0.10), rgba(212, 168, 83, 0.06));
-
-    border-left: 2px solid var(--rosa);
     border-radius: 0 4px 4px 0;
 }
 
@@ -305,7 +335,7 @@ header {
 
 .fechamento-historia {
     margin-top: 0px;
-    padding: 45px 10px;
+    padding: 20px 10px;
     text-align: center;
 }
 
@@ -522,7 +552,6 @@ header {
     text-decoration: none;
     border: 1px solid var(--rosa-claro);
     color: var(--rosa-claro);
-    transition: 0.3s;
     border-radius: 4px;
     font-weight: bold;
     font-size: 0.85rem;
