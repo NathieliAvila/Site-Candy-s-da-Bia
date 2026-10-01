@@ -207,10 +207,16 @@ header {
     background: linear-gradient(to bottom, transparent 55%, rgba(44, 26, 26, 0.35));
 }
 
-
 .hero-content{
     width: 100%;
-    padding: clamp(22px, 6vw, 40px) clamp(14px, 5vw, 40px) clamp(28px, 7vw, 50px);
+    padding: 
+    clamp(22px, 6vw, 40px) 
+    clamp(14px, 5vw, 40px) 
+    clamp(28px, 7vw, 50px);
+}
+
+#hero .titulo{
+    font-size: clamp(1.7rem, 8vw, 3.5rem);
 }
 
 .hero-content p {
@@ -219,13 +225,6 @@ header {
     line-height: 1.6;
     font-size: clamp(0.72rem, 2.5vw, 0.95rem);
 }
-
-
-
-#hero .titulo{
-    font-size: clamp(1.7rem, 8vw, 3.5rem);
-}
-
 
 
 .botao-hero {
@@ -440,7 +439,7 @@ header {
 .titulo-secao {
     max-width: 650px;
     margin: 0 auto 40px;
-    text-align: center;
+
 }
 
 .titulo-secao > p:first-child {
@@ -531,7 +530,7 @@ header {
 .especiais-intro {
     max-width: 650px;
     margin: 0 auto 45px;
-    text-align: center;
+
 }
 
 .especiais-intro .titulo {
