@@ -40,11 +40,11 @@
         </button>
 
             <nav id="itens" class="nav" aria-label="Navegação principal">
-                <a href="#">INÍCIO</a>
-                <a href="#">SOBRE</a>
-                <a href="# ">PRODUTOS</a>
+                <a href="#hero">INÍCIO</a>
+                <a href="#sobre">SOBRE</a>
+                <a href="#produtos">PRODUTOS</a>
                 <a href="#especiais">ESPECIAIS</a>
-                <a href="#">CONTATOS</a>
+                <a href="#contatos">CONTATOS</a>
             </nav>
     </header>
 
@@ -179,7 +179,7 @@
                     </div>
                 </article>
         
-                        <h4>E quando olho para trás, percebo que cada passo teve um propósito.</h4>
+                        <!-- <h4>E quando olho para trás, percebo que cada passo teve um propósito.</h4>
                         
                         <div class="frases-historia">
                             <p>
@@ -197,14 +197,14 @@
                             <p>
                                 O que construímos até aqui é apenas o início de tudo aquilo que ainda está por vir.
                             </p>
-                        </div>
+                        </div> -->
                         <div class="fechamento-historia">
                             <!-- <p>
                                 Hoje, a Candy's da Bia é feita de doces, mas também de sonhos, criatividade, pessoas e histórias.
                             </p> -->
         
                             <strong>
-                                Porque sonhos grandes <em>não tem ponto final</em> ❤️
+                                Sonhos grandes <em>não tem ponto final</em> ❤️
                             </strong>
                         </div>
         
@@ -414,21 +414,12 @@
 
 
 <script>
+    const menuButton = document.getElementById('menu');
+    const menuItens = document.getElementById('itens');
 
-   
-        const menuButton = document.getElementById('menu');
-        const menuItens = document.getElementById('itens');
-
-        menuButton.addEventListener('click', () => {
-            const aberto = menuItens.classList.toggle('ativo');
-        })
-        
-        menuButton.setAttribute('aria-expanded', aberto)
-
-        
-        
-            
-   
+    menuButton.addEventListener('click', () => {
+        const aberto = menuItens.classList.toggle('ativo');
+        menuButton.setAttribute('aria-expanded', aberto);
+    });       
 </script>
-
 </html>
